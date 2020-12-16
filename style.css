@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    /* include margin, border, and padding in size */
+    font-family: "Lucida Sans", sans-serif;
+    background-color: #37474F;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    /* Safari 6.1+ */
+    flex-wrap: wrap;
+}
+
+/* Navbar */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #263238;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #263238;
+}
+
+.navbar li a:hover:not(.active) {
+    background-color: #21272b;
+}
+
+.navbar .active {
+    background-color: #303b42;
+}
+
+.navbar .logout {
+    background-color: #ef5350;
+}
+
+.navbar li a.logout:hover {
+    background-color: #f83835;
+}
+
+
+
+/* Phones: */
+.phone-12-cols {
+    width: 100%;
+}
+
+/* Desktop: */
+@media only screen and (min-width: 750px) {
+    .desktop-1-cols {
+        width: 8.33%;
+    }
+
+    .desktop-2-cols {
+        width: 16.66%;
+    }
+
+    .desktop-3-cols {
+        width: 25%;
+    }
+
+    .desktop-4-cols {
+        width: 33.33%;
+    }
+
+    .desktop-5-cols {
+        width: 41.66%;
+    }
+
+    .desktop-6-cols {
+        width: 50%;
+    }
+
+    .desktop-7-cols {
+        width: 58.33%;
+    }
+
+    .desktop-8-cols {
+        width: 66.66%;
+    }
+
+    .desktop-9-cols {
+        width: 75%;
+    }
+
+    .desktop-10-cols {
+        width: 83.33%;
+    }
+
+    .desktop-11-cols {
+        width: 91.66%;
+    }
+
+    .desktop-12-cols {
+        width: 100%;
+    }
+}
