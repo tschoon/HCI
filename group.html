@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+    <script src="db.js"></script>
+    <script src="scripts.js"></script>
+    <title>Study Group Tinda</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="navbar desktop-12-cols" id="navbar"></div>
+
+    <!-- Content -->
+    <div class="desktop-9-cols" id="main">
+        <h2 id="title"></h2>
+        <div>Beschreibung: <div id="description"></div>
+        </div>
+        <div>Mitglieder: <div id="participants"></div>
+        </div>
+        <div>Reguläre Treffen: <div id="dates"></div>
+        </div>
+    </div>
+    <div class="desktop-3-cols">
+        --hier kommt der Chat--
+    </div>
+
+
+
+    <!-- footer -->
+    <div class="footer desktop-12-cols" id="footer"></div>
+
+    <!-- script to initialize site -->
+    <script>
+        init([ELEMENT.NAVBAR], undefined);
+        id = Number.parseInt(new URL(window.location.href).searchParams.get("g"));
+        if (id < 0 || id >= getGroups("emil").length) {
+            window.location.href = "index.html";
+        }
+        var group = getGroups("emil")[id];
+        document.getElementById("description").innerHTML = group.description;
+        document.getElementById("title").innerHTML = group.name;
+        document.getElementById("participants").innerHTML = group.participants;
+        document.getElementById("dates").innerHTML = group.dates;
+    </script>
+</body>
+
+</html>

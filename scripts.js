@@ -1,15 +1,46 @@
+/**
+ * enumeration of the core elements of the site
+ */
 const ELEMENT = {
     NAVBAR: 'navbar',
     FOOTER: 'footer'
 };
 
+/**
+ * sites that are listed in the navbar
+ */
 const SITE = {
-    HOME: {title: "Hauptmenü", style: "", class: "", href: "index.html"},
-    LOGOUT: {title: "Logout", style: "float:right", class: "logout", href: "logout.html"},
-    MENU1: {title: "Menü 1", style: "", class: "", href: "#"},
-    MENU2: {title: "Menü 2", style: "", class: "", href: "#"},
-    MENU3: {title: "Menü 3", style: "float:right", class: "", href: "#"},
-}
+    HOME: {
+        title: "Hauptmenü",
+        style: "",
+        class: "",
+        href: "index.html"
+    },
+    LOGOUT: {
+        title: "Logout",
+        style: "float:right",
+        class: "logout",
+        href: "login.html"
+    },
+    MENU1: {
+        title: "Menü 1",
+        style: "",
+        class: "",
+        href: "#"
+    },
+    MENU2: {
+        title: "Menü 2",
+        style: "",
+        class: "",
+        href: "#"
+    },
+    MENU3: {
+        title: "grp0",
+        style: "float:right",
+        class: "",
+        href: "group.html?g=0"
+    },
+};
 
 /**
  * creates the navbar at the top of the page
@@ -17,12 +48,12 @@ const SITE = {
  */
 function createNavbar(active) {
     var content = `<ul>`;
-    for(s in SITE) {
+    for (s in SITE) {
         var classes = SITE[s].class;
         classes += (active === SITE[s]) ? ` active` : ``;
         content += `<li style="${SITE[s].style}"><a href="${SITE[s].href}" class="${classes}">${SITE[s].title}</a></li>`;
     }
-    content += `</ul>`;    
+    content += `</ul>`;
     document.getElementById(`navbar`).innerHTML = content;
 }
 
@@ -40,11 +71,11 @@ function createFooter() {
  * @param {SITE} activeSite active navbar element
  */
 function init(showElements, activeSite) {
-    if( showElements.includes(ELEMENT.NAVBAR)) {
+    if (showElements.includes(ELEMENT.NAVBAR)) {
         createNavbar(activeSite);
     }
 
-    if( showElements.includes(ELEMENT.FOOTER)) {
+    if (showElements.includes(ELEMENT.FOOTER)) {
         createFooter();
     }
 }
