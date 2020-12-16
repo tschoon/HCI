@@ -22,25 +22,29 @@ const SITE = {
         class: "logout",
         href: "login.html"
     },
-    MENU1: {
-        title: "Menü 1",
-        style: "",
-        class: "",
-        href: "#"
-    },
-    MENU2: {
-        title: "Menü 2",
-        style: "",
-        class: "",
-        href: "#"
-    },
-    MENU3: {
-        title: "grp0",
+    PROFILE: {
+        title: "Profile",
         style: "float:right",
+        class: "",
+        href: "profile.html"
+    },
+    TMP0: {
+        title: "grp0 (tmp)",
+        style: "",
         class: "",
         href: "group.html?g=0"
     },
 };
+
+function parseDates(dates) {
+    const days = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
+    result = ``;
+    for(i in dates) {
+        result += `${days[dates[i][0].getDay()]} ${dates[i][0].getHours()}:${dates[i][0].getMinutes()} Uhr - ${dates[i][1].getHours()}:${dates[i][1].getMinutes()}`;
+        if(i % dates.length + 1 != dates.length) result += `, `;
+    }
+    return result;
+}
 
 /**
  * creates the navbar at the top of the page
