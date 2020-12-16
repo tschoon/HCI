@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+  <script src="scripts.js"></script>
+  <title>Study Group Tinda</title>
+</head>
+
+<body>
+  <div class="loginForm desktop-6-cols" style="margin: 0 auto;">
+    <form action="index.html" method="post">
+      <div class="container">
+        <label for="uname"><b>Benutzername</b></label>
+        <input type="text" placeholder="Benutzername.." value="Emil" name="uname" required>
+
+        <label for="psw"><b>Passwort</b></label>
+        <input type="password" placeholder="Passwort.." value="StrongestPasswordEUW" name="psw" required>
+
+        <button type="submit">Einloggen</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Eingeloggt bleiben
+        </label>
+        <div style="float: right;"><a href="#">Passwort vergessen?</a> | <a href="#">Registrieren</a></div>
+      </div>
+    </form>
+  </div>
+  <script>
+    init([], undefined);
+  </script>
+</body>
+
+</html>
