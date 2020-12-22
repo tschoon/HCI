@@ -12,19 +12,21 @@
 </head>
 
 <body>
-    <!-- navbar -->
-    <div class="navbar desktop-12-cols" id="navbar"></div>
+    <div class="flex-container">
+        <!-- navbar -->
+        <div class="navbar desktop-12-cols phone-12-cols" id="navbar"></div>
 
-    <!-- Content -->
-    <div id="main"></div>
+        <!-- Content -->
+        <div id="main"></div>
 
-    
+        <!-- footer -->
+        <div class="footer desktop-12-cols phone-12-cols" id="footer"></div>
 
-    <!-- footer -->
-    <div class="footer desktop-12-cols" id="footer"></div>
-
+    </div>
     <!-- script to initialize site -->
-    <script>init([ELEMENT.NAVBAR], SITE.HOME);</script>
+    <script>
+        init([ELEMENT.NAVBAR], SITE.HOME);
+    </script>
 </body>
 
 </html>

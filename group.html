@@ -9,32 +9,70 @@
     <script src="db.js"></script>
     <script src="scripts.js"></script>
     <title>Study Group Tinda</title>
+    <style>
+        .chat-box {
+            border: 3px solid #f1f1f1;
+            margin: 10px 0px;
+            padding: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .bottom-box {
+            border: 3px solid #f1f1f1;;
+            margin: 10px 5px 0px 0px;
+            padding: 3px;
+            bottom: 0px;
+            float: left;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- navbar -->
-    <div class="navbar desktop-12-cols" id="navbar"></div>
+    <div class="flex-container">
+        <!-- navbar -->
+        <div class="navbar desktop-12-cols phone-12-cols" id="navbar"></div>
 
-    <!-- Content -->
-    <div class="desktop-9-cols" id="main">
-        <h2 id="title"></h2>
-        <div>Beschreibung: <div id="description"></div>
+        <!-- Content -->
+        <div class="desktop-8-cols phone-12-cols" id="main">
+            <h2 id="title"></h2>
+            <div>Beschreibung: <span id="description"></span>
+            </div>
+            <div>Mitglieder: <span id="participants"></span>
+            </div>
+            <div>Reguläre Treffen: <span id="dates"></span>
+            </div>
+            <div>
+                <div class="bottom-box">
+                    <input type="checkbox" name="groupOpen" checked="checked">Gruppe offen</input> 
+                </div>
+                <div class="bottom-box">
+                    <input type="button" value="Gruppe verlassen">
+                </div>
+            </div>            
         </div>
-        <div>Mitglieder: <div id="participants"></div>
+        <div class="desktop-4-cols phone-12-cols">
+            <div class="chat-box">
+                <div>
+                    <p>&lt;Peter Z.&gt; Hello!</p>
+                    <p>&lt;Emil&gt; Hall&ouml;chen!</p>
+                </div>
+                <div style="bottom: 0;">
+                    <button type="submit" style="float: right;">Senden</button>
+                    <span style="display: block; overflow: hidden; padding-right: 3px;">
+                        <input type="text" placeholder="Schreibe was.." style="width: 100%;"></input>
+                    </span>
+                </div>
+            </div>
         </div>
-        <div>Reguläre Treffen: <div id="dates"></div>
-        </div>
+
+
+
+        <!-- footer -->
+        <div class="footer desktop-12-cols" id="footer"></div>
     </div>
-    <div class="desktop-3-cols">
-        --hier kommt der Chat--
-    </div>
 
-
-
-    <!-- footer -->
-    <div class="footer desktop-12-cols" id="footer"></div>
-
-    <!-- script to initialize site -->
     <script>
         init([ELEMENT.NAVBAR], undefined);
         id = Number.parseInt(new URL(window.location.href).searchParams.get("g"));
@@ -47,6 +85,8 @@
         document.getElementById("participants").innerHTML = group.participants;
         document.getElementById("dates").innerHTML = parseDates(group.dates);
     </script>
+
+
 </body>
 
 </html>

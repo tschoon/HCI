@@ -6,6 +6,10 @@
     color: white;
 }
 
+::placeholder {
+    color: white;
+}
+
 .flex-container {
     display: -webkit-flex;
     display: flex;
@@ -56,45 +60,6 @@
 /*.footer {
     
 } */
-
-/* Login Form */
-.loginForm form {
-    border: 3px solid #f1f1f1;
-}
-
-.loginForm input[type=text],
-.loginForm input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.loginForm button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.loginForm button:hover {
-    opacity: 0.8;
-}
-
-.loginForm .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.loginForm .container {
-    padding: 16px;
-}
 
 /* Phones: */
 .phone-12-cols {
