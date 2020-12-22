@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+    <script src="db.js"></script>
+    <script src="scripts.js"></script>
+    <title>Study Group Tinda</title>
+    <style>
+      .newGroup {
+        text-align: center;
+        width: 100%;
+      }
+
+      .newGroup .box{
+        width: 40%;
+        margin-top: 10px;
+        padding: 5px;
+        border: 1px solid white;
+      }
+      .newGroup .smallBox{
+        width: 96%;
+        min-height: 200px;
+        margin: 2%;
+        border: 1px solid white;
+        position: relative;
+      }
+      .newGroup button{
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        margin-top: 20px;
+        border: none;
+        cursor: pointer;
+        width: 75%;
+      }
+
+    </style>
+</head>
+
+<body>
+  <div class="flex-container">
+    <!-- navbar -->
+    <div class="navbar desktop-12-cols" id="navbar"></div>
+
+    <!-- Content -->
+    <div class="newGroup">
+      <h1 >Neue Gruppe erstellen:</h1>
+      <form action="index.html" method="post">
+        <div>
+          <label for="gName">Name der Gruppe:</label>
+          <input type="text" id="gName" name="gName" placeholder="Gruppenname..." required>
+        </div>
+        <div class="box" style=float:left;margin-left:5%>
+          Interessen
+          <div class="smallBox">
+            <input style=margin:5px type="text" id="newInterestName" placeholder="neue Interesse..."/>
+            <input style="margin-top:5px" type="button" value="hinzufügen" onclick="createNewInterest();"/>
+            <div id="newInterest" style=margin-bottom:5px></div>
+          </div>
+        </div>
+        <div class="box" style=float:right;margin-right:5%>
+          Termine
+          <div class="smallBox">
+            <label for="weekday">Wochentag:</label>
+            <select style="margin:5px" name="weekday" id="weekday">
+              <option value="Montags">Montag</option>
+              <option value="Dienstags">Dienstag</option>
+              <option value="Mittwochs">Mittwoch</option>
+              <option value="Donnerstags">Donnerstag</option>
+              <option value="Freitags">Freitag</option>
+              <option value="Samstags">Samstag</option>
+              <option value="Sonntags">Sonntag</option>
+            </select>
+            </br>
+            <label for="startTime">Beginn:</label>
+            <input id="startTime" name="startTime" style=margin:5px type="time" required/>
+            </br>
+            <label for="endTime">Ende:</label>
+            <input id="endTime" name="endTime" style=margin:5px type="time" required/>
+            </br>
+            <input style="margin-top:5px;margin-bottom:10px" type="button" value="hinzufügen" onclick="createNewDate();"/>
+            <div id="newDate" style=margin-bottom:5px></div>
+          </div>
+        </div>
+        <button type="submit">Gruppe erstellen</button>
+      </form>
+    </div>
+
+
+
+    <!-- footer -->
+    <div class="footer desktop-12-cols" id="footer"></div>
+
+  </div>
+    <!-- script to initialize site -->
+    <script>
+      init([ELEMENT.NAVBAR], SITE.HOME);
+      function createNewInterest(){
+        var newInterest = document.createElement('div');
+        newInterest.innerHTML = document.getElementById("newInterestName").value;
+        document.getElementById("newInterest").appendChild(newInterest);
+      }
+
+      function createNewDate(){
+        var newDate = document.createElement('div');
+        newDate.innerHTML = document.getElementById("weekday").value + ": " + document.getElementById("startTime").value + " Uhr bis " + document.getElementById("endTime").value + " Uhr";
+        document.getElementById("newDate").appendChild(newDate);
+      }
+    </script>
+</body>
+
+</html>
