@@ -34,6 +34,12 @@ const SITE = {
         class: "",
         href: "group.html?g=0"
     },
+    TMP1: {
+        title: "cNG (tmp)",
+        style: "",
+        class: "",
+        href: "createNewGroup.html"
+    },
 };
 
 function parseDates(dates) {
