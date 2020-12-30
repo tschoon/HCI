@@ -11,13 +11,109 @@
     <title>Study Group Tinda</title>
 </head>
 
+<style>
+    .box{
+        margin-top: 10px;
+        padding: 5px;
+        border: 1px solid white;
+    }
+
+    .tg  {border-collapse:collapse;border-spacing:0;margin:10px;}
+    .tg td{font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg th{font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg .tg-6eq8{color:#333333}
+</style>
+
 <body>
     <div class="flex-container">
         <!-- navbar -->
         <div class="navbar desktop-12-cols phone-12-cols" id="navbar"></div>
 
         <!-- Content -->
-        <div id="main"></div>
+        <div class="desktop-4-cols phone-12-cols" id="main">
+            <div class="box" style="min-height: 100%;">
+                <ul style="margin:0;padding:0;">
+                    <div class="box"><span id="groupName"></span></div>
+                    <input style="margin-top:5px; width: 100%;" type="button" value="Gruppe erstellen" onclick="createNewGroup();"/>
+                    <input style="margin-top:5px; width: 100%;" type="button" value="Gruppe suchen" onclick="searchGroup();"/>
+                </ul>
+            </div>
+        </div>
+        <div class="desktop-8-cols phone-12-cols">
+                <table class="tg">
+                  <tr>
+                    <th class="tg-031e">Zeit</th>
+                    <th class="tg-031e">Mo</th>
+                    <th class="tg-031e">Di</th>
+                    <th class="tg-031e">Mi</th>
+                    <th class="tg-031e">Do</th>
+                    <th class="tg-031e">Fr</th>
+                    <th class="tg-031e">Sa</th>
+                    <th class="tg-031e">So</th>
+                  </tr>
+                  <tr>
+                    <td class="tg-031e">0 - 6<br></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-031e">6 - 9<br></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-031e">9 - 12<br></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-031e">12 - 15<br></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-031e">15 - 18<br></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-031e">18 - 24</td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                    <td class="tg-031e"></td>
+                  </tr>
+                </table>
+                <input style="margin-top:5px; float: right;" type="button" value="Profil suchen" onclick="searchPerson();"/>
+        </div>
 
         <!-- footer -->
         <div class="footer desktop-12-cols phone-12-cols" id="footer"></div>
@@ -26,6 +122,8 @@
     <!-- script to initialize site -->
     <script>
         init([ELEMENT.NAVBAR], SITE.HOME);
+        var group = getGroups("emil")[0];
+        document.getElementById("groupName").innerHTML = group.name;
     </script>
 </body>
 
