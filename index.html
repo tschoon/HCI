@@ -15,13 +15,47 @@
     .box{
         margin-top: 10px;
         padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         border: 1px solid white;
     }
 
-    .tg  {border-collapse:collapse;border-spacing:0;margin:10px;}
-    .tg td{font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-    .tg th{font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-    .tg .tg-6eq8{color:#333333}
+    .group-box{
+      padding: 5px;
+      border: 1px solid white;
+      cursor: pointer;
+    }
+
+    .tg{
+      border-collapse:collapse;
+      border-spacing:0;
+      margin:10px;
+    }
+
+    .tg td{
+      font-size:14px;
+      padding:10px 5px;
+      border-style:solid;
+      border-width:1px;
+      overflow:hidden;
+      word-break:normal;
+      text-align: center;
+    }
+
+    .tg th{
+      font-size:14px;
+      font-weight:normal;
+      padding:10px 5px;
+      border-style:solid;
+      border-width:1px;
+      overflow:hidden;
+      word-break:normal;
+    }
+
+    .tg .tg-6eq8{
+      color:#333333
+    }
 </style>
 
 <body>
@@ -30,17 +64,19 @@
         <div class="navbar desktop-12-cols phone-12-cols" id="navbar"></div>
 
         <!-- Content -->
-        <div class="desktop-4-cols phone-12-cols" id="main">
+        <div class="desktop-3-cols phone-12-cols" id="main">
             <div class="box" style="min-height: 100%;">
                 <ul style="margin:0;padding:0;">
-                    <div class="box"><span id="groupName"></span></div>
-                    <input style="margin-top:5px; width: 100%;" type="button" value="Gruppe erstellen" onclick="createNewGroup();"/>
-                    <input style="margin-top:5px; width: 100%;" type="button" value="Gruppe suchen" onclick="searchGroup();"/>
+                    <div class="group-box" onclick="goToGroup();"><span id="groupName"></span></div>
                 </ul>
+                <div style="bottom: 0;">
+                  <input style="margin-top:5px; width: 100%; cursor: pointer;" type="button" value="Gruppe erstellen" onclick="createNewGroup();"/>
+                  <input style="margin-top:5px; width: 100%; cursor: pointer;" type="button" value="Gruppe suchen" onclick="searchGroup();"/> 
+                </div>
             </div>
         </div>
-        <div class="desktop-8-cols phone-12-cols">
-                <table class="tg">
+        <div class="desktop-9-cols phone-12-cols">
+                <table class="tg" style="width: 99%; height: 100%;">
                   <tr>
                     <th class="tg-031e">Zeit</th>
                     <th class="tg-031e">Mo</th>
@@ -112,7 +148,7 @@
                     <td class="tg-031e"></td>
                   </tr>
                 </table>
-                <input style="margin-top:5px; float: right;" type="button" value="Profil suchen" onclick="searchPerson();"/>
+                <input style="margin-top:5px; float: right; cursor: pointer;" type="button" value="Profil suchen" onclick="searchPerson();"/>
         </div>
 
         <!-- footer -->
@@ -128,11 +164,16 @@
         function createNewGroup() {
           window.location.href = "./createNewGroup.html"
         }
-		function searchGroup() {
+
+        function goToGroup(){
+          window.location.href = "./group.html"
+        }
+
+		    function searchGroup() {
           window.location.href = "./searchGroup.html"
         }
 		
-		function searchPerson() {
+		    function searchPerson() {
           window.location.href = "./searchPerson.html"
         }
     </script>
