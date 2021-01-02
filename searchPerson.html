@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+    <script src="db.js"></script>
+    <script src="scripts.js"></script>
+    <title>Study Group Tinda</title>
+    <style>
+      .main {
+        text-align: center;
+        width: 100%;
+      }
+      .main .box{
+        width: 50%;
+        margin-top: 10px;
+        padding: 5px;
+        border: 1px solid white;
+		
+		margin: auto;
+      }
+      .main .smallBox{
+        width: 96%;
+        min-height: 200px;
+        margin: 2%;
+        border: 1px solid white;
+        position: relative;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="flex-container">
+    <!-- navbar -->
+    <div class="navbar desktop-12-cols" id="navbar"></div>
+    <!-- Content -->
+    <div class="main">
+      <h1 >Profile Suchen:</h1>
+        <div class="box" style=margin-center:5px>
+          Profile
+          <div class="smallBox">
+            <input style=margin:5px type="text" oninput="filter()" id="Persons" placeholder="Hier eintippen"/>
+            <div id="Person" ></div>	
+          </div>
+        </div>
+    </div>
+
+  </div>
+    <!-- script to initialize site -->
+    <script>
+      init([ELEMENT.NAVBAR], SITE.HOME);
+	  const myNode = document.getElementById("Person");
+	  filter();
+	  
+	  function filter(){
+		const myNode = document.getElementById("Person");
+		
+			while (myNode.firstChild) {
+				myNode.removeChild(myNode.lastChild);
+		}
+		
+		getPeople().forEach(person => {
+			if(person.name.toLowerCase().includes(document.getElementById("Persons").value)){
+				var element = document.createElement("button");
+				element.innerHTML = person.name + " " + person.surname + "<br/>" + "'" + person.interests + "'";
+				element.style = "margin-top:5px; width: 100%;" 
+				element.onclick = function() { 
+					window.location.href = "./profile.html"
+				};
+				myNode.appendChild(element);	
+			}
+		});	
+	  }  
+      
+    </script>
+</body>
+
+</html>
