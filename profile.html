@@ -50,9 +50,18 @@
                 <img src="https://i.imgur.com/0CdBiPx.jpg" width="100%">
             </div>
             <div>
-                <div>Name: Emil</div>
-                <div>Nachname: Müller</div>
-               
+                <inline id=name>Name: Emil</inline>
+                <input id=tname type="text" style=display:none />
+                </br>
+                <inline id=nachname>Nachname: Müller</inline>
+                <input id=tnachname type="text" style=display:none />
+                </br>
+                <inline id=bname>Benutzername: Emil</inline>
+                <input id=tbname type="text" style=display:none />
+                </br>
+                <button style=float:left;margin-top:10px type="button" onclick=changeName()>Namen ändern</button>
+                <button id="save" style=margin:10px;display:none type="button" onclick=save()>speichern</button>
+
                 <div class="box" style=float:left;margin-left:5%>
                     Interessen
                     <div class="smallBox">
@@ -63,7 +72,7 @@
                         <div id="newInterest" style=margin-bottom:5px></div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -74,6 +83,24 @@
     <!-- script to initialize site -->
     <script>
         init([ELEMENT.NAVBAR], SITE.PROFILE);
+        function changeName(){
+          document.getElementById("save").style.display = "inline";
+          document.getElementById("tname").value = document.getElementById("name").innerHTML.slice(6);
+          document.getElementById("tnachname").value = document.getElementById("nachname").innerHTML.slice(10);
+          document.getElementById("tbname").value = document.getElementById("bname").innerHTML.slice(14);
+          document.getElementById("tname").style.display = "inline";
+          document.getElementById("tnachname").style.display = "inline";
+          document.getElementById("tbname").style.display = "inline";
+        }
+        function save(){
+          document.getElementById("name").innerHTML = "Name: " + document.getElementById("tname").value;
+          document.getElementById("nachname").innerHTML = "Nachname: " + document.getElementById("tnachname").value;
+          document.getElementById("bname").innerHTML = "Benutzername: " + document.getElementById("tbname").value;
+          document.getElementById("save").style.display = "none";
+          document.getElementById("tname").style.display = "none";
+          document.getElementById("tnachname").style.display = "none";
+          document.getElementById("tbname").style.display = "none";
+        }
     </script>
 </body>
 
