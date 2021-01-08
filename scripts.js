@@ -28,18 +28,6 @@ const SITE = {
         class: "",
         href: "profile.html"
     },
-    TMP0: {
-        title: "grp0 (tmp)",
-        style: "",
-        class: "",
-        href: "group.html?g=0"
-    },
-    TMP1: {
-        title: "cNG (tmp)",
-        style: "",
-        class: "",
-        href: "createNewGroup.html"
-    },
 };
 
 function parseDates(dates) {
