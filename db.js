@@ -16,10 +16,18 @@ var people = [
 	{name: "Hans", surname: "Anderson", interests: ["Bread crumbs", " Walking in the forest"]}
 ];
 
+var interests = [
+	" Linear Algebra", " Mathematics", " Analysis", " Computer Science", " Engineering", " Circuits", " Meeting People",
+	" Partnership",    " Friendship",  " Chemistry"," Biology",          " Physics",    
+]
+
 function getGroups(user) {
     return groups;
 }
 
+function getInterests(user){
+	return interests;
+}
 
 function getPeople(user) {
     return people;

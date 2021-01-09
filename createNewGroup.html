@@ -104,7 +104,18 @@
       function createNewInterest(){
         var newInterest = document.createElement('div');
         newInterest.innerHTML = document.getElementById("newInterestName").value;
-        document.getElementById("newInterest").appendChild(newInterest);
+		
+		var flag = true;
+		getInterests().forEach(interest => {
+			if(interest.toLowerCase().includes(document.getElementById("newInterestName").value.toLowerCase()) && flag == true){
+				document.getElementById("newInterest").appendChild(newInterest);
+				flag = false;
+			}
+		});	
+		if (flag){
+			alert("Please try any of these:  " + getInterests());
+		}
+        
       }
 
       function createNewDate(){
