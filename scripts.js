@@ -14,7 +14,7 @@ const SITE = {
         title: "Hauptmenü",
         style: "",
         class: "",
-        href: "index.html"
+        href: "index.html?fake=1"
     },
     LOGOUT: {
         title: "Logout",

@@ -165,8 +165,8 @@
 
         fake = Number.parseInt(new URL(window.location.href).searchParams.get("fake"));
         if(fake === 1) {
-          document.getElementById("fakegroup").innerHTML = '<div class="group-box" onclick="goToGroup();">Lineare Algebra 3</div>';
-          document.getElementById("faketable1").innerHTML = '<div class="group-box" onclick="goToGroup();">-LA3-</div></td>';
+          document.getElementById("fakegroup").innerHTML = '<div class="group-box" onclick="window.location.href = `./group.html?g=1`;">Lineare Algebra 3</div>';
+          document.getElementById("faketable1").innerHTML = '<div class="group-box" onclick="window.location.href = `./group.html?g=1`;">-LA3-</div></td>';
         }
         console.log(fake);
 
