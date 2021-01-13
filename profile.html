@@ -66,10 +66,10 @@
                     Interessen
                     <div class="smallBox">
                         <div style=margin:5px>Algebra</div>
-                        <div style=margin:5px>Programmieren</div>
+                        <div style=margin:5px;margin-bottom:1px>Programmieren</div>
+                        <div id="neueInteresse" style=margin:5px;margin-top:0px;line-height:25px></div>
                         <input style=margin:5px type="text" id="newInterestName" placeholder="neue Interesse..."/>
-                        <input style="margin-top:5px" type="button" value="hinzufügen"/>
-                        <div id="newInterest" style=margin-bottom:5px></div>
+                        <input style="margin-top:5px" type="button" value="hinzufügen" onclick="addInterest()"/>
                     </div>
                 </div>
 
@@ -100,6 +100,11 @@
           document.getElementById("tname").style.display = "none";
           document.getElementById("tnachname").style.display = "none";
           document.getElementById("tbname").style.display = "none";
+        }
+        function addInterest(){
+          var newInterest = document.createElement("div");
+          newInterest.innerHTML = document.getElementById("newInterestName").value;
+          document.getElementById("neueInteresse").appendChild(newInterest);
         }
     </script>
 </body>
