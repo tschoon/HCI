@@ -2,11 +2,11 @@
 var groups = [
     {name: "Lineare Algebra 2", description: "interessante Beschreibung", participants: "Emil, Peter Z.", dates: [[new Date("2024-01-01T08:10:00Z"), new Date("2024-01-01T10:10:00Z")], [new Date("2024-01-03T08:10:00Z"), new Date("2024-01-03T10:10:00Z")]]},
     {name: "Lineare Algebra 3", description: "interessante Beschreibung", participants: "Emil, Peter Z.", dates: [[new Date("2024-01-02T08:10:00Z"), new Date("2024-01-02T10:10:00Z")]]},
-	{name: "Chicks?", description: "yes"},
+	{name: "Programming?", description: "C, C++, Java, Python 3"},
 	{name: "Sightseeing in Prague", description: "we go to Prague, ocassionally"},
-	{name: "Fish lovers 322", description: "we love fish like noone"},
-	{name: "Somebody has", description: "told me the"},
-	{name: "The world is", description: "gonna roll me"}
+	{name: "FPS Video Games", description: "we play PUBG, CS, and others"},
+	{name: "WG", description: "if you need a place, you will find it here"},
+	{name: "Physics 1", description: "We help everyone who wants to know who Maxwell is"}
 ];
 
 var people = [
