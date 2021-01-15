@@ -79,6 +79,17 @@
         </div>
         <div class="desktop-9-cols phone-12-cols">
                 <table class="tg" style="width: 99%; height: 100%;">
+                  <colgroup>
+                    <col style="width:16%">
+	                  <col style="width:12%">
+                    <col style="width:12%">
+                    <col style="width:12%">
+                    <col style="width:12%">
+                    <col style="width:12%">
+                    <col style="width:12%">
+                    <col style="width:12%">
+                 </colgroup>
+                 <thead>
                   <tr>
                     <th class="tg-031e">Zeit</th>
                     <th class="tg-031e">Mo</th>
@@ -89,9 +100,11 @@
                     <th class="tg-031e">Sa</th>
                     <th class="tg-031e">So</th>
                   </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <td class="tg-031e">0 - 6<br></td>
-                    <td class="tg-031e"><div id="faketable1"></div></td>
+                    <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
@@ -105,15 +118,15 @@
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
-                    <td class="tg-031e"></td>
+                    <td class="tg-031e"><div class="group-box" onclick="goToGroup();">-LA2-</div></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                   </tr>
                   <tr>
                     <td class="tg-031e">9 - 12<br></td>
-                    <td class="tg-031e"><div class="group-box" onclick="goToGroup();">-LA2-</div></td>
                     <td class="tg-031e"></td>
-                    <td class="tg-031e"><div class="group-box" onclick="goToGroup();">-LA2-</div></td>
+                    <td class="tg-031e"><div id="faketable1"></div></td>
+                    <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
@@ -123,7 +136,7 @@
                     <td class="tg-031e">12 - 15<br></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
-                    <td class="tg-031e"></td>
+                    <td class="tg-031e"><div class="group-box" onclick="goToGroup();">-LA2-</div></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
@@ -149,6 +162,7 @@
                     <td class="tg-031e"></td>
                     <td class="tg-031e"></td>
                   </tr>
+                </tbody>
                 </table>
                 <input style="margin-top:5px; float: right; cursor: pointer;" type="button" value="Profil suchen" onclick="searchPerson();"/>
         </div>

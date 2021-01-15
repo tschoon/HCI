@@ -47,7 +47,7 @@
         <div class="desktop-12-cols phone-12-cols" id="main">
             <h1 id="title">Profil</h1>
             <div class="profile-pic" style=float:right;margin-right:5%>
-                <img src="https://i.imgur.com/0CdBiPx.jpg" width="100%">
+                <img id="profile-picture" src="emil.jpg" width="100%">
             </div>
             <div>
                 <inline id=name>Name: Emil</inline>
@@ -59,20 +59,18 @@
                 <inline id=bname>Benutzername: Emil</inline>
                 <input id=tbname type="text" style=display:none />
                 </br>
-                <button style=float:left;margin-top:10px type="button" onclick=changeName()>Namen ändern</button>
+                <button id="changeName" style=float:left;margin-top:10px type="button" onclick=changeName()>Namen ändern</button>
                 <button id="save" style=margin:10px;display:none type="button" onclick=save()>speichern</button>
-
-                <div class="box" style=float:left;margin-left:5%>
+            </div>
+            <div class="box" style="margin-top: 50px;">
                     Interessen
                     <div class="smallBox">
-                        <div style=margin:5px>Algebra</div>
-                        <div style=margin:5px;margin-bottom:1px>Programmieren</div>
+                        <div id="interest1" style=margin:5px>Lineare Algebra</div>
+                        <div id="interest2" style=margin:5px;margin-bottom:1px>Programmieren</div>
                         <div id="neueInteresse" style=margin:5px;margin-top:0px;line-height:25px></div>
-                        <input style=margin:5px type="text" id="newInterestName" placeholder="neue Interesse..."/>
-                        <input style="margin-top:5px" type="button" value="hinzufügen" onclick="addInterest()"/>
+                        <input id="newInterestName" style=margin:5px type="text" placeholder="neue Interesse..."/>
+                        <input id="newInterestButton" style="margin-top:5px" type="button" value="hinzufügen" onclick="addInterest()"/>
                     </div>
-                </div>
-
             </div>
         </div>
 
@@ -83,6 +81,23 @@
     <!-- script to initialize site -->
     <script>
         init([ELEMENT.NAVBAR], SITE.PROFILE);
+
+        fake = Number.parseInt(new URL(window.location.href).searchParams.get("fake"));
+        if(fake === 1) {
+            document.getElementById("changeName").style = "display: none;"
+            document.getElementById("newInterestName").style = "display: none;"
+            document.getElementById("newInterestButton").style = "display: none;"
+
+            document.getElementById("name").innerHTML = "Name: Bob";
+            document.getElementById("nachname").innerHTML = "Nachname: Williamson";
+            document.getElementById("bname").innerHTML = "Benutzername: B-Dog";
+
+            document.getElementById("interest1").innerHTML = "Country Music";
+            document.getElementById("interest2").style = "display: none;"
+
+            document.getElementById("profile-picture").src = "bob.jpg"
+        }
+
         function changeName(){
           document.getElementById("save").style.display = "inline";
           document.getElementById("tname").value = document.getElementById("name").innerHTML.slice(6);

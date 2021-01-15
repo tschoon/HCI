@@ -38,7 +38,7 @@
     <!-- Content -->
     <div class="main">
       <h1 >Profile Suchen:</h1>
-        <div class="box" style=margin-center:5px>
+        <div class="box">
           Profile
           <div class="smallBox">
             <input style=margin:5px type="text" oninput="filter()" id="Persons" placeholder="Hier eintippen"/>
@@ -67,7 +67,12 @@
 				element.innerHTML = person.name + " " + person.surname + "<br/>" + "'" + person.interests + "'";
 				element.style = "margin-top:5px; width: 100%;" 
 				element.onclick = function() { 
-					window.location.href = "./profile.html"
+          if(person.name == "Emil"){
+            window.location.href = "./profile.html";
+          } else {
+            window.location.href = "./profile.html?fake=1";
+          }
+					  
 				};
 				myNode.appendChild(element);	
 			}
