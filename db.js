@@ -12,7 +12,7 @@ var groups = [
 var people = [
 	{name: "Emil", surname: "Müller", interests: ["Linear Algebra", " Programming"]},
 	{name: "M. Night", surname: "Shyamalan", interests: ["Filming", " Explosions"]},
-	{name: "Bob", surname: "Williamson", interests: "Contry Music"},
+	{name: "Bob", surname: "Williamson", interests: "Country Music"},
 	{name: "Hans", surname: "Anderson", interests: ["Bread crumbs", " Walking in the forest"]}
 ];
 

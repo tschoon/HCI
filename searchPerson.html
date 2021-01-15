@@ -67,7 +67,12 @@
 				element.innerHTML = person.name + " " + person.surname + "<br/>" + "'" + person.interests + "'";
 				element.style = "margin-top:5px; width: 100%;" 
 				element.onclick = function() { 
-					window.location.href = "./profile.html"
+          if(person.name == "Emil"){
+            window.location.href = "./profile.html";
+          } else {
+            window.location.href = "./profile.html?fake=1";
+          }
+					  
 				};
 				myNode.appendChild(element);	
 			}
