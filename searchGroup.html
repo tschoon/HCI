@@ -67,7 +67,11 @@
 				element.innerHTML = group.name + "<br/>" + "'" + group.description + "'";
 				element.style = "margin-top:5px; width: 100%;" 
 				element.onclick = function() { 
-					window.location.href = "./group.html?g=0"
+          if(group.name == "Lineare Algebra 3"){
+            window.location.href = "./group.html?g=1"
+          } else {
+            window.location.href = "./group.html?g=0"
+          }
 				};
 				myNode.appendChild(element);	
 			}
